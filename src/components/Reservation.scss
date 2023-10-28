@@ -1,0 +1,158 @@
+
+
+@use "../scss/index" as *;
+
+.reservation {
+
+  margin: 30px 0;
+
+
+  input, label{
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  }
+
+  .container {
+        max-width: 800px; 
+        width: 60%; 
+      
+        padding: 30px; 
+      }
+  
+
+  .reservation-wrap {
+    display: flex;
+  
+  
+    align-items: center;
+    justify-items: center;
+    grid-column-gap: 40px;
+    .form-wrap {
+      padding: 30px 30px;
+    
+      h2,
+      h3 {
+        font-family: $primary-font;
+        font-size: 48px;
+        line-height: 1.2;
+        // color: $base-color;
+        color: green;
+        font-weight: 700;
+    
+      }
+      h3 {
+        font-size: 30px;
+       
+      }
+      .booking-details {
+        display: inline-block;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 15px 20px;
+     
+        padding: 5px;
+      
+       
+        
+
+       
+       h3 {
+          grid-column: 1 / 3;
+        } 
+       
+        input {
+          padding: 5px 10px;
+          font-family: $sec-font;
+          color: $dark;
+          font-size: 16px;
+          line-height: 1.2;
+          outline: none;
+          border: none;
+          text-transform: capitalize;
+          border-bottom: 2px solid $base-color;
+          transition: border 0.3s;
+          &:focus {
+            border-color: $accent-color;
+            transition: border 0.3s;
+          }
+        }
+        input[type="date"] {
+          text-transform: uppercase;
+        }
+        input[type="number"] {
+          overflow: hidden;
+        }
+      }
+    }
+    .img-wrap {
+                    flex: 1; 
+                    padding: 20px; 
+                  }
+                  
+                
+                  .img-wrap img {
+                    max-width: 90%; 
+                    height: auto; 
+                  }
+
+                  .section-heading {
+                    text-decoration: underline;
+                  }    
+                  
+                  .text{
+                    color:blue;
+                  }
+                  
+   
+    button {
+      margin: 20px 0;
+      padding: 15px 20px;
+      background-color: $base-color;
+      font-size: 18px;
+      font-family: $sec-font;
+      font-weight: 700;
+      color: $white;
+      border-radius: 30px;
+      outline: none;
+      border: none;
+      box-shadow: 4px 6px 5px rgba(#000, 0.2);
+
+      transition: background 0.3s;
+      cursor: pointer;
+      &:hover {
+        background-color: $accent-color;
+        color: $base-color;
+        transition: background 0.3s;
+        box-shadow: 2px 2px 4px rgba(#000, 0.2);
+      }
+    }
+  }
+}
+
+
+
+
+
+@media only screen and (max-width: 800px) {
+  .reservation {
+    .reservation-wrap {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@media only screen and (max-width: 699px) {
+  .reservation {
+    .reservation-wrap {
+      .form-wrap {
+        padding: 0 10px;
+        .booking-details {
+          grid-template-columns: 1fr;
+          h3 {
+            grid-column: 1/1;
+          }
+        }
+      }
+    }
+  }
+}
